@@ -5,7 +5,9 @@
 */
 body {
   font: 14px "Open Sans", Helvetica, Arial, sans-serif;
-  color: #61686b; }
+  color: #61686b; 
+  background-color: #f5f7f8;
+}
 
 a {
   color: #5ba4e5; }
@@ -85,7 +87,12 @@ label.label-plain {
 
 /* styling calendar*/
 .calendar_month {
-  width: 100%; }
+  width: 100%;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
 
 .calendar_month td {
   text-align: center;
@@ -97,7 +104,43 @@ label.label-plain {
   font-weight: bolder; }
 
 div.month_container {
-  height: 250px; }
+  height: 350px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  overflow: visible !important;
+}
+
+.row.clearfix {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row.clearfix > .month_container {
+  flex: 0 0 25%;   
+  height: 280px;       
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  margin-bottom: 10px;    
+  overflow: hidden;      
+}
+
+.row.clearfix > .month_container .calendar_month {
+  flex: 1 1 auto;
+  height: 100%;
+  margin-bottom: 0 !important;
+}
+
+.month_container, .calendar_month {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.month_container:hover, .calendar_month:hover {
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: transform 1s, 
+}
 
 .team-view-table {
   width: 100%; }
@@ -169,7 +212,8 @@ td.leave_cell_pended {
   line-height: 1.15em;
   text-align: left;
   padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-bottom: 10px; 
+}
 
 /* Feeds */
 .feed-calendar-big {
@@ -186,9 +230,35 @@ p.description-paragraph {
 div.feeds-holder {
   margin-top: 20px; }
 
+/* Statistics Row Container */
+.statistics-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 3px;
+  margin-bottom: 20px;
+}
+
+.statistics-row > .col-md-3 {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+}
+
 /* Calendars */
 .top-leave-type-statistics {
-  text-align: center; }
+  text-align: center;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 20px 5px 0;
+  margin: 0 3px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
 .top-leave-type-statistics dt {
   font-size: 75px;
@@ -201,7 +271,17 @@ div.feeds-holder {
   font-size: 16px; }
 
 .secondary-leave-type-statistics {
-  font-size: 16px; }
+  font-size: 16px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 20px 5px 0;
+  margin: 0 3px;
+  height: 220px;
+  overflow: visible;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
 .secondary-leave-type-statistics dt {
   text-align: center;
@@ -211,7 +291,23 @@ div.feeds-holder {
 
 .secondary-leave-type-statistics dd {
   padding-left: 10px;
-  padding-right: 10px; }
+  padding-right: 10px; 
+  margin: 0 10px;
+}
+
+.top-leave-type-statistics:hover {
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: transform 1s, 
+}
+
+.secondary-leave-type-statistics:hover {
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: transform 1s, 
+}
 
 .calendar-section-caption {
   text-align: center;
@@ -233,7 +329,14 @@ navbar-nav.navbar-center {
 /* Fix for issue with modal scrollings on mobiles */
 @media (max-width: 768px) {
   body.modal-open {
-    position: fixed; } }
+    position: fixed; } 
+  
+  .row.clearfix > .month_container {
+    flex: 0 0 50%;
+    height: auto;
+    }
+
+  }
 
 /* To be used for selected items in lists */
 .selected-item {

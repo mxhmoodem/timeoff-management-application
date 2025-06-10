@@ -12,12 +12,11 @@
 {{> show_flash_messages }}
 
 <div class="row">&nbsp;</div>
-
 <div class="row main-row_header hidden-xs">
   <div class="col-md-12">Statistics</div>
 </div>
 
-<div class="row">
+<div class="row statistics-row">
 
   <div class="col-md-3 top-leave-type-statistics">
     <dl>
@@ -84,9 +83,9 @@
     &nbsp;
 
     {{# unless show_full_year}}
-    <a class="btn btn-default" href="/calendar/?show_full_year=1">More... &nbsp;<span class="fa fa-plus"></span></a>
+    <a class="btn btn-default" href="/calendar/?show_full_year=1">More &nbsp;<span class="fa fa-plus"></span></a>
     {{else}}
-    <a class="btn btn-default" href="/calendar/">Less... &nbsp;<span class="fa fa-minus"></span></a>
+    <a class="btn btn-default" href="/calendar/">Less &nbsp;<span class="fa fa-minus"></span></a>
     {{/unless}}
 
 
