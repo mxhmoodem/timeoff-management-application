@@ -280,6 +280,13 @@ div.feeds-holder {
   font-size: large;
 }
 
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
 /* Fix for issue with modal scrollings on mobiles */
 @media (max-width: 768px) {
   body.modal-open { position: fixed; }
