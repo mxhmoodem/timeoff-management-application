@@ -168,27 +168,37 @@ td.calendar_cell span {
     text-align : center;
     z-index : 10;
 }
+
 td.current_day_cell {
-  background: #FFCDD2;
-  color : #ffffff;
-}
+  background: #31B0D5;
+  color: #ffffff; 
+  font-weight: bolder;}
+
 td.weekend_cell {
-  background: $selected-item-background;
-}
+  background: #F5F7F8; }
+
 td.bank_holiday_cell {
-    background : #31B0D5;
-    color : #ffffff;
-}
-td.leave_cell {
-    background : #9fbb58;
-    color : $leave_cell_font_color;
-  font-weight: bolder;
-}
+  background: #d72828;
+  color: #ffffff; 
+  font-weight: bolder;}
+
 td.leave_cell_pended {
-  background: #FFCBA4;
-  color: $leave_cell_font_color;
+  background: #f0fb1a;
+  color: #61686b;
+  font-weight: bolder; }
+
+td.sick_leave_cell {
+  background: #ff8811;
+  color: #61686b;
   font-weight: bolder;
 }
+
+td.holiday_leave_cell {
+  background: #9fbb58;
+  color: #61686b;
+  font-weight: bolder;
+}
+
 .modal-dialog {
     max-width : 450px;
 }

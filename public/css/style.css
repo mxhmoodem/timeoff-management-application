@@ -92,6 +92,9 @@ label.label-plain {
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  height: 280px;
+  table-layout: fixed;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .calendar_month td {
@@ -104,9 +107,9 @@ label.label-plain {
   font-weight: bolder; }
 
 div.month_container {
-  height: 350px;
+  height: 100%;
   margin-bottom: 10px;
-  padding: 0 10px;
+  padding: 5px 10px;
   overflow: visible !important;
 }
 
@@ -120,9 +123,9 @@ div.month_container {
   height: 280px;       
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 5px 10px;
   margin-bottom: 10px;    
-  overflow: hidden;      
+  overflow: hidden;    
 }
 
 .row.clearfix > .month_container .calendar_month {
@@ -131,15 +134,11 @@ div.month_container {
   margin-bottom: 0 !important;
 }
 
-.month_container, .calendar_month {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.month_container:hover, .calendar_month:hover {
+.calendar_month:hover {
   transform: scale(1.02);
   z-index: 2;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  transition: transform 1s, 
+  transition: transform 0.5s;
 }
 
 .team-view-table {
@@ -171,25 +170,28 @@ td.calendar_cell span {
   z-index: 10; }
 
 td.current_day_cell {
-  background: #FFCDD2;
-  color: #ffffff; }
+  background: #31B0D5;
+  color: #ffffff; 
+  font-weight: bolder;}
 
 td.weekend_cell {
   background: #F5F7F8; }
 
 td.bank_holiday_cell {
-  background: #31B0D5;
-  color: #ffffff; }
+  background: #d72828;
+  color: #ffffff; 
+  font-weight: bolder;}
+
+td.leave_cell_pended {
+  background: #fa9e14;
+  color: #61686b;
+  font-weight: bolder; }
 
 td.leave_cell {
   background: #9fbb58;
   color: #61686b;
-  font-weight: bolder; }
-
-td.leave_cell_pended {
-  background: #FFCBA4;
-  color: #61686b;
-  font-weight: bolder; }
+  font-weight: bolder;
+}
 
 .modal-dialog {
   max-width: 450px; }
@@ -299,14 +301,14 @@ div.feeds-holder {
   transform: scale(1.02);
   z-index: 2;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  transition: transform 1s, 
+  transition: transform 0.5s, 
 }
 
 .secondary-leave-type-statistics:hover {
   transform: scale(1.02);
   z-index: 2;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  transition: transform 1s, 
+  transition: transform 0.5s, 
 }
 
 .calendar-section-caption {
@@ -357,3 +359,9 @@ navbar-nav.navbar-center {
 
 .leave_type_color_5 {
   background: #00BCD4 !important; }
+
+.navbar, .navbar-default {
+  background-color: #fff !important;
+  border-color: #e5e5e5;
+}
+
